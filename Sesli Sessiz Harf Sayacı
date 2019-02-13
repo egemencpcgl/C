@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+ 
+int main(void)
+{
+      char kelime[100];
+      int uzunluk = 0;
+      int n = 0;
+      int sayacsesli = 0;
+      int sayacsessiz = 0;
+      int sayackelime = 0;
+      int kelimesayi=1;
+      char harf;
+ 
+ 
+      printf("\n Bir cumle giriniz (Turkce karakter kullanmayiniz):\n" );
+      gets(kelime);
+      fflush(stdin);
+ 
+      uzunluk = strlen(kelime);
+ 
+      for( n= 0; n < uzunluk ; n++)
+      {
+          harf = kelime[n];
+ 
+          if( harf >= 'a' && harf <= 'z' )
+              harf = harf - 32;
+              
+             
+          if( harf == 'A' || harf == 'E' || harf == 'I' || harf == 'O' || harf == 'U')
+              sayacsesli++;
+          else if(harf == 'B' || harf == 'C' || harf == 'D' || harf == 'F' || harf == 'G' || harf == 'H' || harf == 'J' || harf == 'K' || harf == 'L' || harf == 'M' || harf == 'N' || harf == 'O' || harf == 'P' || harf == 'R' || harf == 'S' || harf == 'T' || harf == 'Y' || harf == 'V' || harf == 'Y' || harf == 'Z' || harf == 'Q' || harf == 'X' )
+          {
+              sayacsessiz++  ;
+          }
+          else 
+          {
+              sayackelime++;
+              
+          }
+         
+      }
+ 
+      printf("\n %s cumlesinde %i sesli harf var.",kelime,sayacsesli);
+
+      printf("\n %s cumlesinde %i sessiz harf var.",kelime,sayacsessiz);
+      
+      printf("\n %s cumlesinde %i kelime var.",kelime,sayackelime+1);
+}
